@@ -20,6 +20,8 @@ semantic models, standarisation of the physical,
 logical and virtual assets and the relationships between can be accomplish thru
 building information models instantiated by semantic-web ontologies/vocabularies.
 
-![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
+<center><img src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png"></center>
+      <center>Semantic Cake, jummy</center>
 
+#![semantic-web]()
 
