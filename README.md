@@ -1,6 +1,5 @@
 # AECO-ontologies
-<div style="text-align: justify"> your-text-here </div>
-With AECO industry migrating from documents to model-based data-rich
+<div style="text-align: justify"> With AECO industry migrating from documents to model-based data-rich
 approaches, there is an increasing  need to standardise how AECO data is
 produced, stored and exchanged among parties during different stages 
 of a building development. Furthermore, as each stakeholder utilise
@@ -20,4 +19,5 @@ semantic models, standarisation of the physical,
 logical and virtual assets and the relationships between can be accomplish thru
 building information models instantiated by semantic-web ontologies/vocabularies.
 
+</div>
 
