@@ -7,11 +7,13 @@ field-related tools suites for outputting custom data structures suited to their
 respective areas, information heterogeinity increases with every project 
 iteration. 
 
+
 To address this, researchers have envisioned distributed and interdisciplinary 
 environments where information is exchanged among stakeholders thru web-apps.
 As a result, the adoption of semantic web technologies (SWT) to generate 
 linked-data building models over the web is being identified as a promising path
 to increase data interoperability in the AECO industry.
+
 
 The following examples showcase some of the current efforts of the open-source 
 community to address the aforementioned problematic. Hence, by implementing 
