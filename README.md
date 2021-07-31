@@ -1,5 +1,4 @@
 # AECO-ontologies
-
 With AECO industry migrating from documents to model-based data-rich
 approaches, there is an increasing  need to standardise how AECO data is
 produced, stored and exchanged among parties during different stages 
@@ -21,7 +20,6 @@ logical and virtual assets and the relationships between can be accomplish thru
 building information models instantiated by semantic-web ontologies/vocabularies.
 
 <center><img src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png"></center>
-      <center>Semantic Cake, jummy</center>
 
-#![semantic-web]()
+# ![semantic-web]()
 
