@@ -1,10 +1,11 @@
 # AECO-ontologies
+
 With AECO industry migrating from documents to model-based data-rich
 approaches, there is an increasing  need to standardise how AECO data is
 produced, stored and exchanged among parties during different stages 
 of a building development. Furthermore, as each stakeholder utilise
-field-related tools suites for outputting custom data structures suited to their
-respective areas, information heterogeinity increases with every project 
+field-related tools suites for outputting custom data structures -suited to their
+respective areas-, information heterogeinity increases with every project 
 iteration. 
 
 To address this, researchers have envisioned distributed and interdisciplinary 
@@ -16,10 +17,17 @@ to increase data interoperability in the AECO industry.
 The following examples showcase some of the current efforts of the open-source 
 community to address the aforementioned problematic. Hence, by implementing 
 semantic models, standarisation of the physical, 
-logical and virtual assets and the relationships between can be accomplish thru
-building information models instantiated by semantic-web ontologies/vocabularies.
+logical and virtual assets and the relationships between them can be accomplish 
+thru building information models instantiated by semantic-web 
+ontologies/vocabularies.
 
-<center><img src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png"></center>
+![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
 
-# ![semantic-web]()
+# Example: Office, London
 
+Examples describe an office located in london, information regarding the 
+building components are based on ASHRAE 140 std, case XX. Popular ontologies 
+are used to describe building information and, subsequently, instantiated
+models are linked togueter to establish -infer- new relationships among objects.
+
+ 
