@@ -42,7 +42,8 @@ are trivially portable between buildings. This goal is achieved through a
 combination of semantically-expressive abstract modeling, an easy-to-use 
 configuration language, and robust validation tooling"_  
 
-<p align="center">
+<p align = "center">
+
 	<src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png)>
 </p>
 
