@@ -43,7 +43,7 @@ combination of semantically-expressive abstract modeling, an easy-to-use
 configuration language, and robust validation tooling"_  
 
 <p align="center">
-	<img width="460" height="300" src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png)>
+	<src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png)>
 </p>
 
 ![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
