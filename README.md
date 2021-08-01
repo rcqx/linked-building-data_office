@@ -21,12 +21,12 @@ logical and virtual assets and the relationships between them can be accomplish
 thru building information models instantiated by semantic-web 
 ontologies/vocabularies.
 
-The testes semantic schemas are:
-1. Brick; a semantic schema seeking an efficient deployment of building
+The tested semantic schemas are:
+1. [Brick](https://brickschema.org); a semantic schema seeking an efficient deployment of building
 analytics apps thru the creation, implementation  and querying of integrated 
 semantic models.
 
-2. BOT; a minimal ontology to describe anything in the context of a building 
+2. [BOT](https://w3c-lbd-cg.github.io/bot); a minimal ontology to describe anything in the context of a building 
 and to the components (products) that comform them. According to the the BOT 
 draft report, _"The Building Topology Ontology (BOT) is a minimal OWL DL
 ontology for defining relationships between the sub-components of a building. 
@@ -34,18 +34,13 @@ It was suggested as an extensible baseline for use along with more domain
 specific ontologies following general W3C principles of encouraging reuse and 
 keeping the schema no more complex than necessary."_ 
 
-3. DigitalBuilding; an ontology divised by Google, following the steps of brick 
+3. [DigitalBuildings](https://google.github.io/digitalbuildings); an ontology divised by Google, following the steps of brick 
 and haystack, according to google: _"The Digital Buildings project originated 
 from the need to manage a very large, heterogeneous building portfolio in a 
 scalable way. The project aims to enable management applications/analyses that 
 are trivially portable between buildings. This goal is achieved through a 
 combination of semantically-expressive abstract modeling, an easy-to-use 
 configuration language, and robust validation tooling"_  
-
-<p align = "center">
-
-	<src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png)>
-</p>
 
 ![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
 
@@ -66,7 +61,7 @@ Finally, the semantic models  describing the base case scenario will be
 linked togueter in an attemp to infer new relationships between models and,
 thus, discover new relationships. 
 
-For more information related to the modelled singled zone and it's 
+For more information related to the modeled building and it's 
 characteristics, please refer to ASHRAE 140 Standard. 
 
 ![Base Case 640](https://www.researchgate.net/profile/Daniel-Costola-2/publication/241872818/figure/fig2/AS:726716133691392@1550274036653/BESTEST-case-900-building-The-IEA-ECBCS-Annex-43-Testing-and-Validation-of-Building.ppm)
