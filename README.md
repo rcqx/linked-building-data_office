@@ -48,7 +48,7 @@ the energyplus folder. Finally, the semantic models describing the building
 will be linked togueter in an attemp to infer new relationships between 
 models and, thus, discover new relationships. 
 
-![5 Zone Building](../5zonebuilding.png)
+![5 Zone Building](5zonebuilding.png)
 
 
 
