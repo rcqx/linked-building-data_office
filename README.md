@@ -1,4 +1,4 @@
-# AECO-ontologies
+# AECO-ontologies / vocabularies
 
 With AECO industry migrating from documents to model-based data-rich
 approaches, there is an increasing  need to standardise how AECO data is
@@ -42,11 +42,15 @@ are trivially portable between buildings. This goal is achieved through a
 combination of semantically-expressive abstract modeling, an easy-to-use 
 configuration language, and robust validation tooling"_  
 
+<p align="center">
+  <img width="460" height="300" src="https://smiy.files.wordpress.com/2011/01/sw_layercake.png)>
+</p>
+
 ![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
 
-# Tests: An single zone building in London
+# A single zone building in San Francisco, California
 
-Examples describe an office located in london, information regarding the 
+Examples describe an office located in San Francisco, information regarding the 
 building components are based on case 640 from ASHRAE 140 std, which describes a 
 rectangular low mass single zone, where heating and cooling temperature is 
 controlled with a thermostat thru a heating and cooling temperature setback 
