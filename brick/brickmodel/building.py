@@ -10,56 +10,77 @@ g.bind("bldg", BLDG)
 BRICK = Namespace("https://brickschema.org/schema/Brick#")
 g.bind("brick", BRICK)
 
-# Now we start adding instances. We now that our building has 5 zones and a HVAC system serving those zones.
-# Thus, we´ll defined such components with availables brick classes from the brick ontology
+# Now we add the instances. we'll start defining VAVs serving 4 of the 5 available zones first. 
 
-# site
-g.add(BLDG.site, RDF.type, BRICK.Site)
-# building
-g.add(BLDG.office, RDF.type, BRICK.Building)
-# storey
-g.add(BLDG.storey, RDF.type, BRICK.Storey)
-# floor
-g.add(BLDG.floor, RDF.type, BRICK.Floor)
-# spaces
-g.add(BLDG.space1, RDF.type, BRICK.Team_Room)
-g.add(BLDG.space2, RDF.type, BRICK.Team_Room)
-g.add(BLDG.space3, RDF.type, BRICK.Team_Room)
-g.add(BLDG.space4, RDF.type, BRICK.Team_Room)
-g.add(BLDG.space5, RDF.type, BRICK.Team_Room)
+#HVAC AHU with VAVs serving rest of zones
+g.add((BLDG.AHU, RDF.type, BRICK.Air_Handling_Unit))
+g.add((BLDG.VAV_S, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat))
+g.add((BLDG.VAV_E, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat))
+g.add((BLDG.VAV_W, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat))
+g.add((BLDG.VAV_C, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat))
+g.add((BLDG.VAV_S_DPR, RDF.type, BRICK.Damper))
+g.add((BLDG.VAV_E_DPR, RDF.type, BRICK.Damper))
+g.add((BLDG.VAV_W_DPR, RDF.type, BRICK.Damper))
+g.add((BLDG.VAV_C_DPR, RDF.type, BRICK.Damper))
+g.add((BLDG.VAV_S_DPRPOS, RDF.type, BRICK.Damper_Position_Setpoint))
+g.add((BLDG.VAV_E_DPRPOS, RDF.type, BRICK.Damper_Position_Setpoint))
+g.add((BLDG.VAV_W_DPRPOS, RDF.type, BRICK.Damper_Position_Setpoint))
+g.add((BLDG.VAV_C_DPRPOS, RDF.type, BRICK.Damper_Position_Setpoint))
+g.add((BLDG.VAV_S_T, RDF.type, BRICK.Supply_Air_Temperature_Sensor))
+g.add((BLDG.VAV_E_T, RDF.type, BRICK.Supply_Air_Temperature_Sensor))
+g.add((BLDG.VAV_W_T, RDF.type, BRICK.Supply_Air_Temperature_Sensor))
+g.add((BLDG.VAV_C_T, RDF.type, BRICK.Supply_Air_Temperature_Sensor))
+g.add((BLDG.VAV_S_FLOW, RDF.type, BRICK.Supply_Air_Flow_Sensor))
+g.add((BLDG.VAV_E_FLOW, RDF.type, BRICK.Supply_Air_Flow_Sensor))
+g.add((BLDG.VAV_W_FLOW, RDF.type, BRICK.Supply_Air_Flow_Sensor))
+g.add((BLDG.VAV_C_FLOW, RDF.type, BRICK.Supply_Air_Flow_Sensor))
+g.add((BLDG.VAV_S_FSET, RDF.type, BRICK.Supply_Air_Flow_Setpoint))
+g.add((BLDG.VAV_E_FSET, RDF.type, BRICK.Supply_Air_Flow_Setpoint))
+g.add((BLDG.VAV_W_FSET, RDF.type, BRICK.Supply_Air_Flow_Setpoint))
+g.add((BLDG.VAV_C_FSET, RDF.type, BRICK.Supply_Air_Flow_Setpoint))
 # hvac zones
-g.add(BLDG.ZONE1, RDF.type, BRICK.HVAC_zone)
-g.add(BLDG.ZONE2, RDF.type, BRICK.HVAC_zone)
-g.add(BLDG.ZONE3, RDF.type, BRICK.HVAC_zone)
-g.add(BLDG.ZONE4, RDF.type, BRICK.HVAC_zone)
-g.add(BLDG.ZONE5, RDF.type, BRICK.HVAC_zone)
+g.add((BLDG.ZONE_S, RDF.type, BRICK.HVAC_zone))
+g.add((BLDG.ZONE_E, RDF.type, BRICK.HVAC_zone))
+g.add((BLDG.ZONE_W, RDF.type, BRICK.HVAC_zone))
+g.add((BLDG.ZONE_C, RDF.type, BRICK.HVAC_zone))
+g.add((BLDG.ZONE_N, RDF.type, BRICK.HVAC_zone))
+# spaces
+g.add((BLDG.office_S, RDF.type, BRICK.Room))
+g.add((BLDG.office_E, RDF.type, BRICK.Room))
+g.add((BLDG.office_W, RDF.type, BRICK.Room))
+g.add((BLDG.office_C, RDF.type, BRICK.Room))
+g.add((BLDG.office_N, RDF.type, BRICK.Room))
 # thermostats
-g.add(BLDG.thermostat1, RDF.type, BRICK.Thermostat)
-g.add(BLDG.thermostat2, RDF.type, BRICK.Thermostat)
-g.add(BLDG.thermostat3, RDF.type, BRICK.Thermostat)
-g.add(BLDG.thermostat4, RDF.type, BRICK.Thermostat)
-g.add(BLDG.thermostat5, RDF.type, BRICK.Thermostat)
+g.add((BLDG.thermostatS, RDF.type, BRICK.Thermostat))
+g.add((BLDG.thermostatE, RDF.type, BRICK.Thermostat))
+g.add((BLDG.thermostatW, RDF.type, BRICK.Thermostat))
+g.add((BLDG.thermostatC, RDF.type, BRICK.Thermostat))
+g.add((BLDG.thermostatN, RDF.type, BRICK.Thermostat))
+# relationships for South Zone
+g.add((BLDG.AHU, BRICK.feeds, BLDG.VAV_S))
+g.add((BLDG.VAV_S, BRICK.feeds, BLDG.ZONE_S))
+g.add((BLDG.VAV_S, BRICK.hasPart, BLDG.VAV_S_DPR))
+g.add((BLDG.VAV_S_DPR, BRICK.hasPoint, BLDG.VAV_S_DPRPOS))
+g.add((BLDG.VAV_S, BRICK.hasPoint, BLDG.VAV_S_FLOW))
+g.add((BLDG.VAV_S, BRICK.hasPoint, BLDG.VAV_S_FSET))
+g.add((BLDG.ZONE_S, BRICK.hasPart, BLDG.office_S))
+g.add((BLDG.ZONE_S, BRICK.hasPart, BLDG.office_S))
+g.add((BLDG.ZONE_S, BRICK.isRegulatedBy, BLDG.thermostatS))
+
+with open("building.ttl", "wb") as f:
+    f.write(g.serialize(format="ttl"))
+
 # plenum
-g.add(BLDG.Plenum, RDF.type, BRICK.HVAC_zone)
+# g.add(BLDG.Plenum, RDF.type, BRICK.Return_Air_Plenum)
 
 # HVAC unitary system serving North Zone
-g.add(BLDG.HVAC_condenser, RDF.type, BRICK.Condenser)
-g.add(BLDG.HVAC_evaporator, RDF.type, BRICK.FCU)
-#HVAC AHU with VAVs serving rest of zones
-g.add(BLDG.AHU, RDF.type, BRICK.Air_Handling_Unit)
-g.add(BLDG.VAV_South, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat)
-g.add(BLDG.VAV_East, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat)
-g.add(BLDG.VAV_West, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat)
-g.add(BLDG.VAV_Core, RDF.type, BRICK.Variable_Air_Volume_Box_With_Reheat)
+# g.add(BLDG.HVAC_condenser, RDF.type, BRICK.Condenser)
+# g.add(BLDG.HVAC_evaporator, RDF.type, BRICK.FCU)
 
 #Chiller, water loops, tower, boiler
-g.add(BLDG.Chiller, RDF.type, BRICK.Centrifugal_Chiller)
-g.add(BLDG.Tower, RDF.type, BRICK.Cooling_Tower)
-g.add(BLDG.Boiler, RDF.type, BRICK.Centrifugal_Chiller)
-g.add(BLDG.Chilled_loop, RDF.type, BRICK.Water_Distribution)
-g.add(BLDG.Hot_loop, RDF.type, BRICK.Water_Distribution)
-
-
-# Boiler
-g.add(BLDG.boiler, RDF.type, BRICK.Condensing_Natural_Gas_Boiler)
-
+# g.add(BLDG.Chiller, RDF.type, BRICK.Centrifugal_Chiller)
+# g.add(BLDG.Tower, RDF.type, BRICK.Cooling_Tower)
+# g.add(BLDG.Boiler, RDF.type, BRICK.XXXXXXXX)
+# g.add(BLDG.Chilled_loop, RDF.type, BRICK.Water_Distribution)
+# g.add(BLDG.Hot_loop, RDF.type, BRICK.Water_Distribution)
+ 
