@@ -1,15 +1,11 @@
 # AECO-ontologies / vocabularies
 ![semantic-web](https://smiy.files.wordpress.com/2011/01/sw_layercake.png)
 
-With AECO industry going from documents to model-based data-rich
-approaches, there is a  need to standardise how AECO data is
+With AECO sector going from documents to model-based approaches, there is a 
+need to standardise how data is 
 produced, stored and exchanged among parties during a building life cycle.
-As different stakeholders utilise field-related tools suites to access and 
-manipulate AECO data, information granularity increases with every project 
-iteration. 
-
-To increase data interoperability, the adoption of semantic web technologies (SWT)
-to generate linked-data building models over the web is being identified as a 
+The adoption of semantic web technologies (SWT)
+to generate linked-data models is being identified as a 
 promising path to increase data interoperability in the AECO industry.
 
 The following examples showcase some of the current efforts of the open-source 
