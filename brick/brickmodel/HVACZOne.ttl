@@ -1,0 +1,17 @@
+@prefix bldg: <http://example.com/building#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+
+bldg:Building a brick:Building ;
+    brick:hasPart bldg:office_S .
+
+bldg:ZONE_S a brick:HVAC_zone ;
+    brick:hasPart bldg:office_S ;
+    brick:hasPoint bldg:RHSensor_S,
+        bldg:thermostats .
+
+bldg:thermostatS a brick:Thermostat .
+
+bldg:RHSensor_S a brick:Zone_Air_Humidity_Sensor .
+
+bldg:office_S a brick:Room .
+

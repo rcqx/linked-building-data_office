@@ -48,7 +48,7 @@ g.add((BLDG.ZONE_S, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_W, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_C, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_N, RDF.type, BRICK.HVAC_zone)) """
-# spaces
+# rooms
 g.add((BLDG.office_S, RDF.type, BRICK.Room))
 """ g.add((BLDG.office_E, RDF.type, BRICK.Room))
 g.add((BLDG.office_W, RDF.type, BRICK.Room))
@@ -60,7 +60,10 @@ g.add((BLDG.thermostatS, RDF.type, BRICK.Thermostat))
 g.add((BLDG.thermostatW, RDF.type, BRICK.Thermostat))
 g.add((BLDG.thermostatC, RDF.type, BRICK.Thermostat))
 g.add((BLDG.thermostatN, RDF.type, BRICK.Thermostat))
- """
+"""
+# humidity sensor
+g.add((BLDG.RHSensor_S, RDF.type, BRICK.Zone_Air_Humidity_Sensor))
+
 # relationships for South Zone
 g.add((BLDG.AHU, BRICK.feeds, BLDG.VAV_S))
 g.add((BLDG.VAV_S, BRICK.feeds, BLDG.ZONE_S))
@@ -70,7 +73,6 @@ g.add((BLDG.VAV_S, BRICK.hasPoint, BLDG.VAV_S_FLOW))
 g.add((BLDG.VAV_S, BRICK.hasPoint, BLDG.VAV_S_FSET))
 g.add((BLDG.ZONE_S, BRICK.hasPart, BLDG.office_S))
 g.add((BLDG.ZONE_S, BRICK.isRegulatedBy, BLDG.thermostatS))
-
 
 """ # relationships for East Zone
 g.add((BLDG.AHU, BRICK.feeds, BLDG.VAV_E))
