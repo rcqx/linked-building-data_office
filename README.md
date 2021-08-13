@@ -1,5 +1,7 @@
  AECO-ontologies / vocabularies
-![rdf_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px-Rdf_logo.svg.png =250x)
+#![rdf_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px-Rdf_logo.svg.png =250x)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px" width="200" height="200" />
 
 The adoption of semantic web technologies (SWT)
 to generate linked-data building models is being identified as a 
