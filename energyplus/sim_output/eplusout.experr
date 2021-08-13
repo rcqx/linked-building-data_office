@@ -1,2 +1,0 @@
-ExpandObjects: Warning:  In HVACTemplate:System:VAV "VAV with Reheat" the Heating Coil Design Setpoint is greater than the Preheat Coil Design Setpoint, but Heating Coil Type=None. Using Preheat Coil Design Setpoint for the Sizing:System Central Heating Design Supply Air Temperature.
-ExpandObjects: Warning:  In HVACTemplate:System:VAV "VAV with Reheat" there is no Heating Coil and no Preheat Coil. The Preheat Coil Design Setpoint will be used for the Sizing:System Central Heating Design Supply Air Temperature. This will be the inlet air temperature for sizing reheat coils.

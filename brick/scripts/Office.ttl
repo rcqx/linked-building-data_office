@@ -1,0 +1,71 @@
+@prefix bldg: <http://example.com/building#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+
+bldg:ZONE_C a brick:HVAC_zone ;
+    brick:hasPart bldg:office_C ;
+    brick:hasPoint bldg:RHSensor_C,
+        bldg:thermostatC .
+
+bldg:ZONE_E a brick:HVAC_zone ;
+    brick:hasPart bldg:office_E ;
+    brick:hasPoint bldg:RHSensor_E,
+        bldg:thermostatE .
+
+bldg:ZONE_N a brick:HVAC_zone ;
+    brick:hasPart bldg:office_N ;
+    brick:hasPoint bldg:RHSensor_N,
+        bldg:thermostatN .
+
+bldg:ZONE_S a brick:HVAC_zone ;
+    brick:hasPart bldg:office_S ;
+    brick:hasPoint bldg:RHSensor_S,
+        bldg:thermostatS .
+
+bldg:ZONE_W a brick:HVAC_zone ;
+    brick:hasPart bldg:office_W ;
+    brick:hasPoint bldg:RHSensor_W,
+        bldg:thermostatW .
+
+bldg:office a brick:Floor ;
+    brick:hasLocation bldg:office_building ;
+    brick:hasPart bldg:office_C,
+        bldg:office_E,
+        bldg:office_N,
+        bldg:office_S,
+        bldg:office_W .
+
+bldg:RHSensor_C a brick:Zone_Air_Humidity_Sensor .
+
+bldg:RHSensor_E a brick:Zone_Air_Humidity_Sensor .
+
+bldg:RHSensor_N a brick:Zone_Air_Humidity_Sensor .
+
+bldg:RHSensor_S a brick:Zone_Air_Humidity_Sensor .
+
+bldg:RHSensor_W a brick:Zone_Air_Humidity_Sensor .
+
+bldg:Site a brick:Site .
+
+bldg:office_building a brick:Building ;
+    brick:hasLocation bldg:Site .
+
+bldg:thermostatC a brick:Thermostat .
+
+bldg:thermostatE a brick:Thermostat .
+
+bldg:thermostatN a brick:Thermostat .
+
+bldg:thermostatS a brick:Thermostat .
+
+bldg:thermostatW a brick:Thermostat .
+
+bldg:office_C a brick:Room .
+
+bldg:office_E a brick:Room .
+
+bldg:office_N a brick:Room .
+
+bldg:office_S a brick:Room .
+
+bldg:office_W a brick:Room .
+
