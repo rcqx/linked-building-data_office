@@ -40,5 +40,6 @@ in an attemp to infer new relationships and, thus, showcase how
 AECO interoperability can increase by establishing consensus among staholders 
 thru a common-data understanding (semantic layer)
 
-![5 Zone Building](5zonebuilding.png)
+<img src="https://www.energyplus.net/sites/default/files/docs/site_v8.3.0/GettingStarted/media/image020.png" width="250"/>
+
 
