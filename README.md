@@ -4,9 +4,7 @@
 
 The adoption of semantic web technologies (SWT)
 to generate linked-data building models is being identified as a 
-promising path to increase data interoperability in the AECO industry.
-
-The following examples showcase some of the current efforts of the open-source 
+promising path to increase data interoperability in the AECO industry. The following examples showcase some of the current efforts of the open-source 
 community to address the aforementioned problematic. Hence, by implementing 
 semantic models, standarisation of the physical, 
 logical and virtual assets and the relationships between them can be accomplish 

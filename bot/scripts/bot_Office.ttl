@@ -1,0 +1,83 @@
+@prefix bldg: <http://example.com/building#> .
+@prefix bot: <https://w3c-lbd-cg.github.io/bot#> .
+
+bldg:Site a bot:Site ;
+    bot:hasBuilding bldg:office_building .
+
+bldg:ZONE_C a bot:Zone ;
+    bot:hasElement bldg:RHSensor_C,
+        bldg:thermostatC ;
+    bot:hasSpace bldg:office_C .
+
+bldg:ZONE_E a bot:Zone ;
+    bot:hasElement bldg:RHSensor_E,
+        bldg:thermostatE ;
+    bot:hasSpace bldg:office_E .
+
+bldg:ZONE_N a bot:Zone ;
+    bot:hasElement bldg:RHSensor_N,
+        bldg:thermostatN ;
+    bot:hasSpace bldg:office_N .
+
+bldg:ZONE_S a bot:Zone ;
+    bot:hasElement bldg:RHSensor_S,
+        bldg:thermostatS ;
+    bot:hasSpace bldg:office_S .
+
+bldg:ZONE_W a bot:Zone ;
+    bot:hasElement bldg:RHSensor_W,
+        bldg:thermostatW ;
+    bot:hasSpace bldg:office_W .
+
+bldg:RHSensor_C a bot:Element .
+
+bldg:RHSensor_E a bot:Element .
+
+bldg:RHSensor_N a bot:Element .
+
+bldg:RHSensor_S a bot:Element .
+
+bldg:RHSensor_W a bot:Element .
+
+bldg:office a bot:Storey ;
+    bot:hasSpace bldg:office_C,
+        bldg:office_E,
+        bldg:office_N,
+        bldg:office_S,
+        bldg:office_W .
+
+bldg:office_building a bot:Building ;
+    bot:hasStorey bldg:office .
+
+bldg:thermostatC a bot:Element .
+
+bldg:thermostatE a bot:Element .
+
+bldg:thermostatN a bot:Element .
+
+bldg:thermostatS a bot:Element .
+
+bldg:thermostatW a bot:Element .
+
+bldg:office_C a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_N,
+        bldg:office_S,
+        bldg:office_W .
+
+bldg:office_E a bot:Space ;
+    bot:adjacentZone bldg:office_N,
+        bldg:office_S .
+
+bldg:office_N a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_W .
+
+bldg:office_S a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_W .
+
+bldg:office_W a bot:Space ;
+    bot:adjacentZone bldg:office_N,
+        bldg:office_S .
+
