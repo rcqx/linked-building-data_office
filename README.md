@@ -1,5 +1,4 @@
- AECO-ontologies / vocabularies
-#![rdf_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px-Rdf_logo.svg.png =250x)
+# AECO-ontologies / vocabularies
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px" width="200" height="200" />
 
