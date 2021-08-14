@@ -24,12 +24,11 @@ specific ontologies following general W3C principles of encouraging reuse and
 keeping the schema no more complex than necessary."_ 
 
 3. [DigitalBuildings](https://google.github.io/digitalbuildings); an ontology divised by Google, following the steps of brick 
-and haystack, according to google: _"The Digital Buildings project originated 
+and haystack, concerned with modeling the characteristics and telemetry of entities, and their relationships with each other. 
+An entity is any instance of a "thing" in the model. The ontology is concerned with "describing the thing. According to google: _"The Digital Buildings project originated 
 from the need to manage a very large, heterogeneous building portfolio in a 
 scalable way. The project aims to enable management applications/analyses that 
-are trivially portable between buildings. This goal is achieved through a 
-combination of semantically-expressive abstract modeling, an easy-to-use 
-configuration language, and robust validation tooling"_  
+are trivially portable between buildings. 
 
 Examples describe the "Tutorial Exercise 2" from the ["Getting with EnergyPlus"
 guide](https://energyplus.net/sites/default/files/pdfs_v8.3.0/GettingStarted.pdf)  

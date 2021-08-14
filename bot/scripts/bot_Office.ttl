@@ -59,25 +59,49 @@ bldg:thermostatS a bot:Element .
 
 bldg:thermostatW a bot:Element .
 
+bldg:glassdoor a bot:Element .
+
 bldg:office_C a bot:Space ;
     bot:adjacentZone bldg:office_E,
         bldg:office_N,
         bldg:office_S,
-        bldg:office_W .
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall .
+
+bldg:window a bot:Element .
+
+bldg:ceiling a bot:ceiling .
 
 bldg:office_E a bot:Space ;
     bot:adjacentZone bldg:office_N,
-        bldg:office_S .
+        bldg:office_S ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall,
+        bldg:window .
 
 bldg:office_N a bot:Space ;
     bot:adjacentZone bldg:office_E,
-        bldg:office_W .
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:glassdoor,
+        bldg:wall,
+        bldg:window .
 
 bldg:office_S a bot:Space ;
     bot:adjacentZone bldg:office_E,
-        bldg:office_W .
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:glassdoor,
+        bldg:wall,
+        bldg:window .
 
 bldg:office_W a bot:Space ;
     bot:adjacentZone bldg:office_N,
-        bldg:office_S .
+        bldg:office_S ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall,
+        bldg:window .
+
+bldg:wall a bot:Element .
 

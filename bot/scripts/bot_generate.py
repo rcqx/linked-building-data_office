@@ -26,6 +26,14 @@ g.add((BLDG.ZONE_S, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_E, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_W, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_C, RDF.type, BOT.Zone))
+# window
+g.add((BLDG.window, RDF.type, BOT.Element))
+# glassdoor
+g.add((BLDG.glassdoor, RDF.type, BOT.Element))
+# wall
+g.add((BLDG.wall, RDF.type, BOT.Element))
+# ceiling
+g.add((BLDG.ceiling, RDF.type, BOT.ceiling))
 # thermostats
 g.add((BLDG.thermostatN, RDF.type, BOT.Element))
 g.add((BLDG.thermostatS, RDF.type, BOT.Element))
@@ -47,26 +55,61 @@ g.add((BLDG.office, BOT.hasSpace, BLDG.office_N))
 g.add((BLDG.ZONE_N, BOT.hasSpace, BLDG.office_N))
 g.add((BLDG.ZONE_N, BOT.hasElement, BLDG.thermostatN))
 g.add((BLDG.ZONE_N, BOT.hasElement, BLDG.RHSensor_N))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.ceiling))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.glassdoor))
+g.add((BLDG.office_N, BOT.hasElement, BLDG.window))
+
 # relations for South zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_S))
 g.add((BLDG.ZONE_S, BOT.hasSpace, BLDG.office_S))
 g.add((BLDG.ZONE_S, BOT.hasElement, BLDG.thermostatS))
 g.add((BLDG.ZONE_S, BOT.hasElement, BLDG.RHSensor_S))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.ceiling))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.glassdoor))
+g.add((BLDG.office_S, BOT.hasElement, BLDG.window))
+
 # relations for East zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_E))
 g.add((BLDG.ZONE_E, BOT.hasSpace, BLDG.office_E))
 g.add((BLDG.ZONE_E, BOT.hasElement, BLDG.thermostatE))
 g.add((BLDG.ZONE_E, BOT.hasElement, BLDG.RHSensor_E))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.ceiling))
+g.add((BLDG.office_E, BOT.hasElement, BLDG.window))
+
 # relations for West zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_W))
 g.add((BLDG.ZONE_W, BOT.hasSpace, BLDG.office_W))
 g.add((BLDG.ZONE_W, BOT.hasElement, BLDG.thermostatW))
 g.add((BLDG.ZONE_W, BOT.hasElement, BLDG.RHSensor_W))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.ceiling))
+g.add((BLDG.office_W, BOT.hasElement, BLDG.window))
+
 # relations for Core zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_C))
 g.add((BLDG.ZONE_C, BOT.hasSpace, BLDG.office_C))
 g.add((BLDG.ZONE_C, BOT.hasElement, BLDG.thermostatC))
 g.add((BLDG.ZONE_C, BOT.hasElement, BLDG.RHSensor_C))
+g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
+g.add((BLDG.office_C, BOT.hasElement, BLDG.ceiling))
 
 # adjacent zones for N
 g.add((BLDG.office_N, BOT.adjacentZone, BLDG.office_E))
