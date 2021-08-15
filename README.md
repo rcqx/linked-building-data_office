@@ -20,10 +20,12 @@ It was suggested as an extensible baseline for use along with more domain
 specific ontologies following general W3C principles of encouraging reuse and 
 keeping the schema no more complex than necessary.
 
-3. [OMG](https://www.projekt-scope.de/ontologies/omg/#hasComplexGeometryDescription); ontology for attaching geometry 
+3. [BPO](https://www.projekt-scope.de/ontologies/bpo/); The Building Product Ontology defines concepts to describe (building) products in a schematic way. 
+
+4. [OMG](https://www.projekt-scope.de/ontologies/omg/#hasComplexGeometryDescription); ontology for attaching geometry 
 descriptions to their corresponding things (e.g. building objects).
 
-4. [DigitalBuildings](https://google.github.io/digitalbuildings); an ontology divised by Google, following the steps of brick 
+5. [DigitalBuildings](https://google.github.io/digitalbuildings); an ontology divised by Google, following the steps of brick 
 and haystack, concerned with modeling the characteristics and telemetry of entities, and their relationships with each other. 
 
 Examples describe the "Tutorial Exercise 2" from the ["Getting with EnergyPlus"

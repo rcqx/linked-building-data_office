@@ -1,5 +1,7 @@
 @prefix bldg: <http://example.com/building#> .
 @prefix bot: <https://w3c-lbd-cg.github.io/bot#> .
+@prefix bpo1: <https://w3id.org/bpo> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
 @prefix omg: <https://www.projekt-scope.de/ontologies/omg/> .
 @prefix product: <https://w3id.org/product#> .
 @prefix xsd1: <http://www.w3.org/2001/XMLSchema> .
@@ -7,25 +9,30 @@
 bldg:BuildingGeometry a omg:Geometry ;
     omg:hasSimpleGeometryDescription xsd1:string .
 
-bldg:Site a bot:Site ;
+bldg:Site a brick:Site,
+        bot:Site ;
     bot:hasBuilding bldg:office_building .
 
-bldg:ZONE_C a bot:Zone ;
+bldg:ZONE_C a brick:HVAC_zone,
+        bot:Zone ;
     bot:hasElement bldg:RHSensor_C,
         bldg:thermostatC ;
     bot:hasSpace bldg:office_C .
 
-bldg:ZONE_E a bot:Zone ;
+bldg:ZONE_E a brick:HVAC_zone,
+        bot:Zone ;
     bot:hasElement bldg:RHSensor_E,
         bldg:thermostatE ;
     bot:hasSpace bldg:office_E .
 
-bldg:ZONE_N a bot:Zone ;
+bldg:ZONE_N a brick:HVAC_zone,
+        bot:Zone ;
     bot:hasElement bldg:RHSensor_N,
         bldg:thermostatN ;
     bot:hasSpace bldg:office_N .
 
-bldg:ZONE_S a bot:Zone ;
+bldg:ZONE_S a brick:HVAC_zone,
+        bot:Zone ;
     bot:hasElement bldg:RHSensor_S,
         bldg:thermostatS ;
     bot:hasSpace bldg:office_S .
@@ -35,50 +42,73 @@ bldg:ZONE_W a bot:Zone ;
         bldg:thermostatW ;
     bot:hasSpace bldg:office_W .
 
-bldg:RHSensor_C a bot:Element,
-        product:Element .
+bldg:RHSensor_C a brick:Zone_Air_Humidity_Sensor,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:RHSensor_E a bot:Element,
-        product:Element .
+bldg:RHSensor_E a brick:Zone_Air_Humidity_Sensor,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:RHSensor_N a bot:Element,
-        product:Element .
+bldg:RHSensor_N a brick:Zone_Air_Humidity_Sensor,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:RHSensor_S a bot:Element,
-        product:Element .
+bldg:RHSensor_S a brick:Zone_Air_Humidity_Sensor,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:RHSensor_W a bot:Element,
-        product:Element .
+bldg:RHSensor_W a brick:Zone_Air_Humidity_Sensor,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:office a bot:Storey ;
+bldg:office a brick:Floor,
+        bot:Storey ;
     bot:hasSpace bldg:office_C,
         bldg:office_E,
         bldg:office_N,
         bldg:office_S,
         bldg:office_W .
 
-bldg:office_building a bot:Building ;
+bldg:office_building a brick:Building,
+        bot:Zone ;
     bot:hasStorey bldg:office .
 
-bldg:thermostatC a bot:Element,
-        product:Element .
+bldg:thermostatC a brick:Thermostat,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
 bldg:thermostatE a bot:Element,
-        product:Element .
+        bpo1:Product,
+        product:Product .
 
-bldg:thermostatN a bot:Element,
-        product:Element .
+bldg:thermostatN a brick:Thermostat,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:thermostatS a bot:Element,
-        product:Element .
+bldg:thermostatS a brick:Thermostat,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
-bldg:thermostatW a bot:Element,
-        product:Element .
+bldg:thermostatW a brick:Thermostat,
+        bot:Element,
+        bpo1:Product,
+        product:Product .
 
 bldg:glassdoor a bot:Element,
-        product:Element .
+        bpo1:Product,
+        product:Product .
 
-bldg:office_C a bot:Space ;
+bldg:office_C a brick:Room,
+        bot:Space ;
     bot:adjacentZone bldg:office_E,
         bldg:office_N,
         bldg:office_S,
@@ -87,18 +117,21 @@ bldg:office_C a bot:Space ;
         bldg:wall .
 
 bldg:window a bot:Element,
+        bpo1:Product,
         product:Product .
 
 bldg:ceiling a bot:ceiling .
 
-bldg:office_E a bot:Space ;
+bldg:office_E a brick:Room,
+        bot:Space ;
     bot:adjacentZone bldg:office_N,
         bldg:office_S ;
     bot:hasElement bldg:ceiling,
         bldg:wall,
         bldg:window .
 
-bldg:office_N a bot:Space ;
+bldg:office_N a brick:Room,
+        bot:Space ;
     bot:adjacentZone bldg:office_E,
         bldg:office_W ;
     bot:hasElement bldg:ceiling,
@@ -106,7 +139,8 @@ bldg:office_N a bot:Space ;
         bldg:wall,
         bldg:window .
 
-bldg:office_S a bot:Space ;
+bldg:office_S a brick:Room,
+        bot:Space ;
     bot:adjacentZone bldg:office_E,
         bldg:office_W ;
     bot:hasElement bldg:ceiling,
@@ -114,7 +148,8 @@ bldg:office_S a bot:Space ;
         bldg:wall,
         bldg:window .
 
-bldg:office_W a bot:Space ;
+bldg:office_W a brick:Room,
+        bot:Space ;
     bot:adjacentZone bldg:office_N,
         bldg:office_S ;
     bot:hasElement bldg:ceiling,

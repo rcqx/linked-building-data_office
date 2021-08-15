@@ -14,6 +14,8 @@ OMG = Namespace("https://www.projekt-scope.de/ontologies/omg/")
 g.bind("omg", OMG)
 PRODUCT = Namespace("https://w3id.org/product#")
 g.bind("product", PRODUCT)
+BPO = Namespace("https://w3id.org/bpo")
+g.bind("bpo", BPO)
 
 # site
 g.add((BLDG.Site, RDF.type, BOT.Site))
@@ -36,35 +38,56 @@ g.add((BLDG.ZONE_C, RDF.type, BOT.Zone))
 # window
 g.add((BLDG.window, RDF.type, BOT.Element))
 g.add((BLDG.window, RDF.type, PRODUCT.Product))
+g.add((BLDG.window, RDF.type, BPO.Product))
 # glassdoor
 g.add((BLDG.glassdoor, RDF.type, BOT.Element))
-g.add((BLDG.glassdoor, RDF.type, PRODUCT.Element))
+g.add((BLDG.glassdoor, RDF.type, PRODUCT.Product))
+g.add((BLDG.glassdoor, RDF.type, BPO.Product))
 # wall
 g.add((BLDG.wall, RDF.type, BOT.Element))
 # ceiling
 g.add((BLDG.ceiling, RDF.type, BOT.ceiling))
 # thermostats
 g.add((BLDG.thermostatN, RDF.type, BOT.Element))
-g.add((BLDG.thermostatN, RDF.type, PRODUCT.Element))
+g.add((BLDG.thermostatN, RDF.type, PRODUCT.Product))
+g.add((BLDG.thermostatN, RDF.type, BPO.Product))
+
 g.add((BLDG.thermostatS, RDF.type, BOT.Element))
-g.add((BLDG.thermostatS, RDF.type, PRODUCT.Element))
+g.add((BLDG.thermostatS, RDF.type, PRODUCT.Product))
+g.add((BLDG.thermostatS, RDF.type, BPO.Product))
+
 g.add((BLDG.thermostatE, RDF.type, BOT.Element))
-g.add((BLDG.thermostatE, RDF.type, PRODUCT.Element))
+g.add((BLDG.thermostatE, RDF.type, PRODUCT.Product))
+g.add((BLDG.thermostatE, RDF.type, BPO.Product))
+
 g.add((BLDG.thermostatW, RDF.type, BOT.Element))
-g.add((BLDG.thermostatW, RDF.type, PRODUCT.Element))
+g.add((BLDG.thermostatW, RDF.type, PRODUCT.Product))
+g.add((BLDG.thermostatW, RDF.type, BPO.Product))
+
 g.add((BLDG.thermostatC, RDF.type, BOT.Element))
-g.add((BLDG.thermostatC, RDF.type, PRODUCT.Element))
+g.add((BLDG.thermostatC, RDF.type, PRODUCT.Product))
+g.add((BLDG.thermostatC, RDF.type, BPO.Product))
+
 # humidity sensor
 g.add((BLDG.RHSensor_N, RDF.type, BOT.Element))
-g.add((BLDG.RHSensor_N, RDF.type, PRODUCT.Element))
+g.add((BLDG.RHSensor_N, RDF.type, PRODUCT.Product))
+g.add((BLDG.RHSensor_N, RDF.type, BPO.Product))
+
 g.add((BLDG.RHSensor_S, RDF.type, BOT.Element))
-g.add((BLDG.RHSensor_S, RDF.type, PRODUCT.Element))
+g.add((BLDG.RHSensor_S, RDF.type, PRODUCT.Product))
+g.add((BLDG.RHSensor_S, RDF.type, BPO.Product))
+
 g.add((BLDG.RHSensor_E, RDF.type, BOT.Element))
-g.add((BLDG.RHSensor_E, RDF.type, PRODUCT.Element))
+g.add((BLDG.RHSensor_E, RDF.type, PRODUCT.Product))
+g.add((BLDG.RHSensor_E, RDF.type, BPO.Product))
+
 g.add((BLDG.RHSensor_W, RDF.type, BOT.Element))
-g.add((BLDG.RHSensor_W, RDF.type, PRODUCT.Element))
+g.add((BLDG.RHSensor_W, RDF.type, PRODUCT.Product))
+g.add((BLDG.RHSensor_W, RDF.type, BPO.Product))
+
 g.add((BLDG.RHSensor_C, RDF.type, BOT.Element))
-g.add((BLDG.RHSensor_C, RDF.type, PRODUCT.Element))
+g.add((BLDG.RHSensor_C, RDF.type, PRODUCT.Product))
+g.add((BLDG.RHSensor_C, RDF.type, BPO.Product))
 
 # geometry
 g.add((BLDG.BuildingGeometry, RDF.type, OMG.Geometry))
