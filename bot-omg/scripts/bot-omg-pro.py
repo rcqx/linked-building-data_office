@@ -12,6 +12,8 @@ BPO = Namespace("https://www.projekt-scope.de/ontologies/bpo/")
 g.bind("bpo", BPO)
 OMG = Namespace("https://www.projekt-scope.de/ontologies/omg/")
 g.bind("omg", OMG)
+PRODUCT = Namespace("https://w3id.org/product#")
+g.bind("product", PRODUCT)
 
 # site
 g.add((BLDG.Site, RDF.type, BOT.Site))
@@ -33,24 +35,37 @@ g.add((BLDG.ZONE_W, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_C, RDF.type, BOT.Zone))
 # window
 g.add((BLDG.window, RDF.type, BOT.Element))
+g.add((BLDG.window, RDF.type, PRODUCT.Product))
 # glassdoor
 g.add((BLDG.glassdoor, RDF.type, BOT.Element))
+g.add((BLDG.glassdoor, RDF.type, PRODUCT.Element))
 # wall
 g.add((BLDG.wall, RDF.type, BOT.Element))
 # ceiling
 g.add((BLDG.ceiling, RDF.type, BOT.ceiling))
 # thermostats
 g.add((BLDG.thermostatN, RDF.type, BOT.Element))
+g.add((BLDG.thermostatN, RDF.type, PRODUCT.Element))
 g.add((BLDG.thermostatS, RDF.type, BOT.Element))
+g.add((BLDG.thermostatS, RDF.type, PRODUCT.Element))
 g.add((BLDG.thermostatE, RDF.type, BOT.Element))
+g.add((BLDG.thermostatE, RDF.type, PRODUCT.Element))
 g.add((BLDG.thermostatW, RDF.type, BOT.Element))
+g.add((BLDG.thermostatW, RDF.type, PRODUCT.Element))
 g.add((BLDG.thermostatC, RDF.type, BOT.Element))
+g.add((BLDG.thermostatC, RDF.type, PRODUCT.Element))
 # humidity sensor
 g.add((BLDG.RHSensor_N, RDF.type, BOT.Element))
+g.add((BLDG.RHSensor_N, RDF.type, PRODUCT.Element))
 g.add((BLDG.RHSensor_S, RDF.type, BOT.Element))
+g.add((BLDG.RHSensor_S, RDF.type, PRODUCT.Element))
 g.add((BLDG.RHSensor_E, RDF.type, BOT.Element))
+g.add((BLDG.RHSensor_E, RDF.type, PRODUCT.Element))
 g.add((BLDG.RHSensor_W, RDF.type, BOT.Element))
+g.add((BLDG.RHSensor_W, RDF.type, PRODUCT.Element))
 g.add((BLDG.RHSensor_C, RDF.type, BOT.Element))
+g.add((BLDG.RHSensor_C, RDF.type, PRODUCT.Element))
+
 # geometry
 g.add((BLDG.BuildingGeometry, RDF.type, OMG.Geometry))
 
@@ -135,6 +150,6 @@ g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_W))
 # GEOMETRY
 g.add((BLDG.BuildingGeometry, OMG.hasSimpleGeometryDescription, XSD.string))
 
-with open("bot-bpo-omg.ttl", "wb") as f:
+with open("bot-omg-pro.ttl", "wb") as f:
     # the Turtle format strikes a balance beteween being compact and easy to read
     f.write(g.serialize(format="ttl", encoding='UTF-8'))
