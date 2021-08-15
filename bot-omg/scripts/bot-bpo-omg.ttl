@@ -1,0 +1,112 @@
+@prefix bldg: <http://example.com/building#> .
+@prefix bot: <https://w3c-lbd-cg.github.io/bot#> .
+@prefix omg: <https://www.projekt-scope.de/ontologies/omg/> .
+@prefix xsd1: <http://www.w3.org/2001/XMLSchema> .
+
+bldg:BuildingGeometry a omg:Geometry ;
+    omg:hasSimpleGeometryDescription xsd1:string .
+
+bldg:Site a bot:Site ;
+    bot:hasBuilding bldg:office_building .
+
+bldg:ZONE_C a bot:Zone ;
+    bot:hasElement bldg:RHSensor_C,
+        bldg:thermostatC ;
+    bot:hasSpace bldg:office_C .
+
+bldg:ZONE_E a bot:Zone ;
+    bot:hasElement bldg:RHSensor_E,
+        bldg:thermostatE ;
+    bot:hasSpace bldg:office_E .
+
+bldg:ZONE_N a bot:Zone ;
+    bot:hasElement bldg:RHSensor_N,
+        bldg:thermostatN ;
+    bot:hasSpace bldg:office_N .
+
+bldg:ZONE_S a bot:Zone ;
+    bot:hasElement bldg:RHSensor_S,
+        bldg:thermostatS ;
+    bot:hasSpace bldg:office_S .
+
+bldg:ZONE_W a bot:Zone ;
+    bot:hasElement bldg:RHSensor_W,
+        bldg:thermostatW ;
+    bot:hasSpace bldg:office_W .
+
+bldg:RHSensor_C a bot:Element .
+
+bldg:RHSensor_E a bot:Element .
+
+bldg:RHSensor_N a bot:Element .
+
+bldg:RHSensor_S a bot:Element .
+
+bldg:RHSensor_W a bot:Element .
+
+bldg:office a bot:Storey ;
+    bot:hasSpace bldg:office_C,
+        bldg:office_E,
+        bldg:office_N,
+        bldg:office_S,
+        bldg:office_W .
+
+bldg:office_building a bot:Building ;
+    bot:hasStorey bldg:office .
+
+bldg:thermostatC a bot:Element .
+
+bldg:thermostatE a bot:Element .
+
+bldg:thermostatN a bot:Element .
+
+bldg:thermostatS a bot:Element .
+
+bldg:thermostatW a bot:Element .
+
+bldg:glassdoor a bot:Element .
+
+bldg:office_C a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_N,
+        bldg:office_S,
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall .
+
+bldg:window a bot:Element .
+
+bldg:ceiling a bot:ceiling .
+
+bldg:office_E a bot:Space ;
+    bot:adjacentZone bldg:office_N,
+        bldg:office_S ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall,
+        bldg:window .
+
+bldg:office_N a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:glassdoor,
+        bldg:wall,
+        bldg:window .
+
+bldg:office_S a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_W ;
+    bot:hasElement bldg:ceiling,
+        bldg:glassdoor,
+        bldg:wall,
+        bldg:window .
+
+bldg:office_W a bot:Space ;
+    bot:adjacentZone bldg:office_N,
+        bldg:office_S ;
+    bot:hasElement bldg:ceiling,
+        bldg:wall,
+        bldg:window .
+
+bldg:wall a bot:Element .
+
