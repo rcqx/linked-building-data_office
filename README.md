@@ -1,4 +1,4 @@
-# A linked-data building example 
+# Linked Building Data: An office building
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rdf_logo.svg/1200px-Rdf_logo.svg.png" width="250"/>
 
