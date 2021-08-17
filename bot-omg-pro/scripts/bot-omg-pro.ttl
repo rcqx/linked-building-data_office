@@ -3,10 +3,6 @@
 @prefix bpo1: <https://w3id.org/bpo> .
 @prefix omg: <https://www.projekt-scope.de/ontologies/omg/> .
 @prefix product: <https://w3id.org/product#> .
-@prefix xsd1: <http://www.w3.org/2001/XMLSchema> .
-
-bldg:BuildingGeometry a omg:Geometry ;
-    omg:hasSimpleGeometryDescription xsd1:string .
 
 bldg:Site a bot:Site ;
     bot:hasBuilding bldg:office_building .
@@ -36,6 +32,8 @@ bldg:ZONE_W a bot:Zone ;
         bldg:thermostatW ;
     bot:hasSpace bldg:office_W .
 
+bldg:BuildingGeometry a omg:Geometry .
+
 bldg:RHSensor_C a bot:Element,
         bpo1:Product,
         product:Product .
@@ -64,7 +62,8 @@ bldg:office a bot:Storey ;
         bldg:office_W .
 
 bldg:office_building a bot:Building ;
-    bot:hasStorey bldg:office .
+    bot:hasStorey bldg:office ;
+    omg:hasGeometry bldg:BuildingGeometry .
 
 bldg:thermostatC a bot:Element,
         bpo1:Product,

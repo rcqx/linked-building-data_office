@@ -1,7 +1,11 @@
-from rdflib import RDF, RDFS, OWL, Namespace, Graph
+from typing import Literal
+from rdflib import RDF, RDFS, OWL, Namespace, Graph, Literal
+import rdflib
 
 g = Graph()
 
+UNIT = Namespace("http://qudt.org/vocab/unit/")
+g.bind("unit", UNIT)
 XSD = Namespace("http://www.w3.org/2001/XMLSchema")
 g.bind("xsd", XSD)
 BLDG = Namespace("http://example.com/building#")
@@ -47,7 +51,7 @@ g.add((BLDG.ZONE_S, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_E, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_E, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_W, RDF.type, BOT.Zone))
-g.add((BLDG.ZONE_E, RDF.type, BRICK.HVAC_zone))
+g.add((BLDG.ZONE_W, RDF.type, BRICK.HVAC_zone))
 g.add((BLDG.ZONE_C, RDF.type, BOT.Zone))
 g.add((BLDG.ZONE_C, RDF.type, BRICK.HVAC_zone))
 # window
@@ -62,33 +66,35 @@ g.add((BLDG.glassdoor, RDF.type, BPO.Product))
 g.add((BLDG.wall, RDF.type, BOT.Element))
 # ceiling
 g.add((BLDG.ceiling, RDF.type, BOT.ceiling))
-# thermostats
-g.add((BLDG.thermostatN, RDF.type, BOT.Element))
-g.add((BLDG.thermostatN, RDF.type, PRODUCT.Product))
-g.add((BLDG.thermostatN, RDF.type, BPO.Product))
-g.add((BLDG.thermostatN, RDF.type, BRICK.Thermostat))
 
-g.add((BLDG.thermostatS, RDF.type, BOT.Element))
-g.add((BLDG.thermostatS, RDF.type, PRODUCT.Product))
-g.add((BLDG.thermostatS, RDF.type, BPO.Product))
-g.add((BLDG.thermostatS, RDF.type, BRICK.Thermostat))
+# temperature sensor
+g.add((BLDG.temp_sensor_N, RDF.type, BOT.Element))
+g.add((BLDG.temp_sensor_N, RDF.type, PRODUCT.Product))
+g.add((BLDG.temp_sensor_N, RDF.type, BPO.Product))
+g.add((BLDG.temp_sensor_N, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_N, BRICK.hasUnit, UNIT.DEG_C))
 
-g.add((BLDG.thermostatE, RDF.type, BOT.Element))
-g.add((BLDG.thermostatE, RDF.type, PRODUCT.Product))
-g.add((BLDG.thermostatE, RDF.type, BPO.Product))
-g.add((BLDG.thermostatN, RDF.type, BRICK.Thermostat))
+g.add((BLDG.temp_sensor_S, RDF.type, BOT.Element))
+g.add((BLDG.temp_sensor_S, RDF.type, PRODUCT.Product))
+g.add((BLDG.temp_sensor_S, RDF.type, BPO.Product))
+g.add((BLDG.temp_sensor_S, RDF.type, BRICK.Temperature_Sensor))
 
-g.add((BLDG.thermostatW, RDF.type, BOT.Element))
-g.add((BLDG.thermostatW, RDF.type, PRODUCT.Product))
-g.add((BLDG.thermostatW, RDF.type, BPO.Product))
-g.add((BLDG.thermostatW, RDF.type, BRICK.Thermostat))
+g.add((BLDG.temp_sensor_E, RDF.type, BOT.Element))
+g.add((BLDG.temp_sensor_E, RDF.type, PRODUCT.Product))
+g.add((BLDG.temp_sensor_E, RDF.type, BPO.Product))
+g.add((BLDG.temp_sensor_E, RDF.type, BRICK.Temperature_Sensor))
 
-g.add((BLDG.thermostatC, RDF.type, BOT.Element))
-g.add((BLDG.thermostatC, RDF.type, PRODUCT.Product))
-g.add((BLDG.thermostatC, RDF.type, BPO.Product))
-g.add((BLDG.thermostatC, RDF.type, BRICK.Thermostat))
+g.add((BLDG.temp_sensor_W, RDF.type, BOT.Element))
+g.add((BLDG.temp_sensor_W, RDF.type, PRODUCT.Product))
+g.add((BLDG.temp_sensor_W, RDF.type, BPO.Product))
+g.add((BLDG.temp_sensor_W, RDF.type, BRICK.Temperature_Sensor))
 
-# humidity sensor
+g.add((BLDG.temp_sensor_C, RDF.type, BOT.Element))
+g.add((BLDG.temp_sensor_C, RDF.type, PRODUCT.Product))
+g.add((BLDG.temp_sensor_C, RDF.type, BPO.Product))
+g.add((BLDG.temp_sensor_C, RDF.type, BRICK.Temperature_Sensor))
+
+# humidity sensors
 g.add((BLDG.RHSensor_N, RDF.type, BOT.Element))
 g.add((BLDG.RHSensor_N, RDF.type, PRODUCT.Product))
 g.add((BLDG.RHSensor_N, RDF.type, BPO.Product))
@@ -136,7 +142,7 @@ g.add((BLDG.office_N, BOT.hasElement, BLDG.window))
 # relations for South zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_S))
 g.add((BLDG.ZONE_S, BOT.hasSpace, BLDG.office_S))
-g.add((BLDG.ZONE_S, BOT.hasElement, BLDG.thermostatS))
+g.add((BLDG.ZONE_S, BOT.hasElement, BLDG.temp_sensor_N))
 g.add((BLDG.ZONE_S, BOT.hasElement, BLDG.RHSensor_S))
 g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
 g.add((BLDG.office_S, BOT.hasElement, BLDG.wall))
@@ -148,7 +154,7 @@ g.add((BLDG.office_S, BOT.hasElement, BLDG.window))
 # relations for East zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_E))
 g.add((BLDG.ZONE_E, BOT.hasSpace, BLDG.office_E))
-g.add((BLDG.ZONE_E, BOT.hasElement, BLDG.thermostatE))
+g.add((BLDG.ZONE_E, BOT.hasElement, BLDG.temp_sensor_E))
 g.add((BLDG.ZONE_E, BOT.hasElement, BLDG.RHSensor_E))
 g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
 g.add((BLDG.office_E, BOT.hasElement, BLDG.wall))
@@ -159,7 +165,7 @@ g.add((BLDG.office_E, BOT.hasElement, BLDG.window))
 # relations for West zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_W))
 g.add((BLDG.ZONE_W, BOT.hasSpace, BLDG.office_W))
-g.add((BLDG.ZONE_W, BOT.hasElement, BLDG.thermostatW))
+g.add((BLDG.ZONE_W, BOT.hasElement, BLDG.temp_sensor_W))
 g.add((BLDG.ZONE_W, BOT.hasElement, BLDG.RHSensor_W))
 g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
 g.add((BLDG.office_W, BOT.hasElement, BLDG.wall))
@@ -170,7 +176,7 @@ g.add((BLDG.office_W, BOT.hasElement, BLDG.window))
 # relations for Core zone
 g.add((BLDG.office, BOT.hasSpace, BLDG.office_C))
 g.add((BLDG.ZONE_C, BOT.hasSpace, BLDG.office_C))
-g.add((BLDG.ZONE_C, BOT.hasElement, BLDG.thermostatC))
+g.add((BLDG.ZONE_C, BOT.hasElement, BLDG.temp_sensor_C))
 g.add((BLDG.ZONE_C, BOT.hasElement, BLDG.RHSensor_C))
 g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
 g.add((BLDG.office_C, BOT.hasElement, BLDG.wall))
@@ -194,6 +200,25 @@ g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_N))
 g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_S))
 g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_E))
 g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_W))
+
+# telemetry points
+g.add((BLDG.office_N, BRICK.hasPoint, BLDG.RHSensor_N))
+g.add((BLDG.office_N, BRICK.hasPoint, BLDG.temp_sensor_N))
+
+g.add((BLDG.office_S, BRICK.hasPoint, BLDG.RHSensor_S))
+g.add((BLDG.office_S, BRICK.hasPoint, BLDG.temp_sensor_S))
+
+g.add((BLDG.office_E, BRICK.hasPoint, BLDG.RHSensor_E))
+g.add((BLDG.office_E, BRICK.hasPoint, BLDG.temp_sensor_E))
+
+g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
+g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
+
+# timeseries data
+timeseries = [
+    (BRICK.hasTimeseriesId, Literal("121233", ))
+]
+g.add((BLDG.temp_sensor_N, BRICK.hasTimeseries, timeseries))
 
 # GEOMETRY
 g.add((BLDG.BuildingGeometry, OMG.hasSimpleGeometryDescription, XSD.string))
