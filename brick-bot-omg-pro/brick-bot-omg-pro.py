@@ -1,6 +1,5 @@
-from typing import Literal
-from rdflib import RDF, RDFS, OWL, Namespace, Graph, Literal
-import rdflib
+from rdflib import RDF, RDFS, OWL, Namespace, Graph
+from rdflib import Literal
 
 g = Graph()
 
@@ -72,7 +71,6 @@ g.add((BLDG.temp_sensor_N, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_N, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_N, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_N, RDF.type, BRICK.Temperature_Sensor))
-g.add((BLDG.temp_sensor_N, BRICK.hasUnit, UNIT.DEG_C))
 
 g.add((BLDG.temp_sensor_S, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_S, RDF.type, PRODUCT.Product))
@@ -201,7 +199,7 @@ g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_S))
 g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_E))
 g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_W))
 
-# telemetry points
+# Points
 g.add((BLDG.office_N, BRICK.hasPoint, BLDG.RHSensor_N))
 g.add((BLDG.office_N, BRICK.hasPoint, BLDG.temp_sensor_N))
 
@@ -214,15 +212,17 @@ g.add((BLDG.office_E, BRICK.hasPoint, BLDG.temp_sensor_E))
 g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
 g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
 
-# timeseries data
-timeseries = [
-    (BRICK.hasTimeseriesId, Literal("121233", ))
-]
-g.add((BLDG.temp_sensor_N, BRICK.hasTimeseries, timeseries))
+# North office temperature sensor
+# g.add((BLDG.ts_meter_N, RDF.type, BRICK.Temperature_Parameter)) 
+# g.add((BLDG.temp_sensor_N, BRICK.isPointOf, BLDG.ts_meter_N))
+g.add((BLDG.temp_sensor_N, BRICK.hasUnit, UNIT.DEG_C))
 
 # GEOMETRY
 g.add((BLDG.BuildingGeometry, OMG.hasSimpleGeometryDescription, XSD.string))
+# timeseries 
+# ts_id = [
+#     (BRICK.hasTimeseriesId, Literal("bcf9a85d-696c-446a-a2ac-97207ecfbc56"))
+# ]
+# g.add((BLDG.temp_sensor_N, BRICK.timeseries, BLDG.ts_id))
 
-with open("brick-bot-omg-pro.ttl", "wb") as f:
-    # the Turtle format strikes a balance beteween being compact and easy to read
-    f.write(g.serialize(format="ttl", encoding='UTF-8'))
+g.serialize("brick-bot-omg-pro2.ttl", format="ttl")

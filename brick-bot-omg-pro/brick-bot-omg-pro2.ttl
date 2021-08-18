@@ -118,8 +118,7 @@ bldg:temp_sensor_N a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
         product:Product ;
-    brick:hasUnit unit:DEG_C ;
-    brick:timeseries bldg:bcf9a85d-696c-446a-a2ac-97207ecfbc56 .
+    brick:hasUnit unit:DEG_C .
 
 bldg:window a bot:Element,
         bpo1:Product,
