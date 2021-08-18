@@ -64,17 +64,22 @@ bldg:office_building a brick:Building,
 bldg:temp_sensor_C a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
-        product:Product .
+        product:Product ;
+    brick:hasUnit unit:DEG_C .
 
 bldg:temp_sensor_S a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
-        product:Product .
+        product:Product ;
+    brick:hasUnit unit:DEG_C ;
+    brick:timeseries [ brick:hasTimeseriesId "00f92284-53d8-44b5-8dc2-ea0cae6c4776" ] .
 
 bldg:temp_sensor_W a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
-        product:Product .
+        product:Product ;
+    brick:hasUnit unit:DEG_C ;
+    brick:timeseries [ brick:hasTimeseriesId "679bb09c-0f15-4392-bf0b-9201c966c5c5" ] .
 
 bldg:RHSensor_E a brick:Zone_Air_Humidity_Sensor,
         bot:Element,
@@ -112,13 +117,16 @@ bldg:office_C a brick:Room,
 bldg:temp_sensor_E a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
-        product:Product .
+        product:Product ;
+    brick:hasUnit unit:DEG_C ;
+    brick:timeseries [ brick:hasTimeseriesId "cc97ea6b-f879-4be5-a375-ac6bc128a0c0" ] .
 
 bldg:temp_sensor_N a brick:Temperature_Sensor,
         bot:Element,
         bpo1:Product,
         product:Product ;
-    brick:hasUnit unit:DEG_C .
+    brick:hasUnit unit:DEG_C ;
+    brick:timeseries [ brick:hasTimeseriesId "987f8342-f917-46c1-a0e7-8402e0fe8ebe" ] .
 
 bldg:window a bot:Element,
         bpo1:Product,

@@ -1,30 +1,33 @@
 @prefix bldg: <http://example.com/building#> .
 @prefix brick: <https://brickschema.org/schema/Brick#> .
 
+bldg:Condenser a brick:Condenser .
+
+bldg:Fan_Coil_N a brick:Fan_Coil_Unit ;
+    brick:feeds bldg:ZONE_N ;
+    brick:hasPoint bldg:FCU_saf_sensor,
+        bldg:FCU_sat_sensor,
+        bldg:FCU_set_sensor .
+
 bldg:ZONE_C a brick:HVAC_zone ;
     brick:hasPart bldg:office_C ;
     brick:hasPoint bldg:RHSensor_C,
-        bldg:thermostatC .
+        bldg:temp_sensor_C .
 
 bldg:ZONE_E a brick:HVAC_zone ;
     brick:hasPart bldg:office_E ;
     brick:hasPoint bldg:RHSensor_E,
-        bldg:thermostatE .
-
-bldg:ZONE_N a brick:HVAC_zone ;
-    brick:hasPart bldg:office_N ;
-    brick:hasPoint bldg:RHSensor_N,
-        bldg:thermostatN .
+        bldg:temp_sensor_E .
 
 bldg:ZONE_S a brick:HVAC_zone ;
     brick:hasPart bldg:office_S ;
     brick:hasPoint bldg:RHSensor_S,
-        bldg:thermostatS .
+        bldg:temp_sensor_S .
 
 bldg:ZONE_W a brick:HVAC_zone ;
     brick:hasPart bldg:office_W ;
     brick:hasPoint bldg:RHSensor_W,
-        bldg:thermostatW .
+        bldg:temp_sensor_W .
 
 bldg:office a brick:Floor ;
     brick:hasLocation bldg:office_building ;
@@ -33,6 +36,15 @@ bldg:office a brick:Floor ;
         bldg:office_N,
         bldg:office_S,
         bldg:office_W .
+
+bldg:office_N_SYS brick:hasPart brick:Condenser,
+        brick:Fan_Coil_Unit .
+
+bldg:FCU_saf_sensor a brick:Supply_Air_Flow_Sensor .
+
+bldg:FCU_sat_sensor a brick:Supply_Air_Temperature_Sensor .
+
+bldg:FCU_set_sensor a brick:Supply_Air_Flow_Setpoint .
 
 bldg:RHSensor_C a brick:Zone_Air_Humidity_Sensor .
 
@@ -46,18 +58,23 @@ bldg:RHSensor_W a brick:Zone_Air_Humidity_Sensor .
 
 bldg:Site a brick:Site .
 
+bldg:ZONE_N a brick:HVAC_zone ;
+    brick:hasPart bldg:office_N ;
+    brick:hasPoint bldg:RHSensor_N,
+        bldg:temp_sensor_N .
+
 bldg:office_building a brick:Building ;
     brick:hasLocation bldg:Site .
 
-bldg:thermostatC a brick:Thermostat .
+bldg:temp_sensor_C a brick:Temperature_Sensor .
 
-bldg:thermostatE a brick:Thermostat .
+bldg:temp_sensor_E a brick:Temperature_Sensor .
 
-bldg:thermostatN a brick:Thermostat .
+bldg:temp_sensor_N a brick:Temperature_Sensor .
 
-bldg:thermostatS a brick:Thermostat .
+bldg:temp_sensor_S a brick:Temperature_Sensor .
 
-bldg:thermostatW a brick:Thermostat .
+bldg:temp_sensor_W a brick:Temperature_Sensor .
 
 bldg:office_C a brick:Room .
 

@@ -1,3 +1,3 @@
 # Brick
 
-### Brick model of a single story office building 
+A brick model describing the entities and relationships of a single storey office.

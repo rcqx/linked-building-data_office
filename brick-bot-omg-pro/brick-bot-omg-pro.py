@@ -1,5 +1,6 @@
 from rdflib import RDF, RDFS, OWL, Namespace, Graph
 from rdflib import Literal
+from rdflib.term import BNode
 
 g = Graph()
 
@@ -71,26 +72,32 @@ g.add((BLDG.temp_sensor_N, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_N, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_N, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_N, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_N, BRICK.hasUnit, UNIT.DEG_C))
 
 g.add((BLDG.temp_sensor_S, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_S, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_S, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_S, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_S, BRICK.hasUnit, UNIT.DEG_C))
+
 
 g.add((BLDG.temp_sensor_E, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_E, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_E, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_E, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_E, BRICK.hasUnit, UNIT.DEG_C))
 
 g.add((BLDG.temp_sensor_W, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_W, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_W, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_W, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_W, BRICK.hasUnit, UNIT.DEG_C))
 
 g.add((BLDG.temp_sensor_C, RDF.type, BOT.Element))
 g.add((BLDG.temp_sensor_C, RDF.type, PRODUCT.Product))
 g.add((BLDG.temp_sensor_C, RDF.type, BPO.Product))
 g.add((BLDG.temp_sensor_C, RDF.type, BRICK.Temperature_Sensor))
+g.add((BLDG.temp_sensor_C, BRICK.hasUnit, UNIT.DEG_C))
 
 # humidity sensors
 g.add((BLDG.RHSensor_N, RDF.type, BOT.Element))
@@ -210,19 +217,23 @@ g.add((BLDG.office_E, BRICK.hasPoint, BLDG.RHSensor_E))
 g.add((BLDG.office_E, BRICK.hasPoint, BLDG.temp_sensor_E))
 
 g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
-g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W))
-
-# North office temperature sensor
-# g.add((BLDG.ts_meter_N, RDF.type, BRICK.Temperature_Parameter)) 
-# g.add((BLDG.temp_sensor_N, BRICK.isPointOf, BLDG.ts_meter_N))
-g.add((BLDG.temp_sensor_N, BRICK.hasUnit, UNIT.DEG_C))
+g.add((BLDG.office_W, BRICK.hasPoint, BLDG.RHSensor_W)) 
 
 # GEOMETRY
 g.add((BLDG.BuildingGeometry, OMG.hasSimpleGeometryDescription, XSD.string))
+
 # timeseries 
-# ts_id = [
-#     (BRICK.hasTimeseriesId, Literal("bcf9a85d-696c-446a-a2ac-97207ecfbc56"))
-# ]
-# g.add((BLDG.temp_sensor_N, BRICK.timeseries, BLDG.ts_id))
+N_ts_id = BNode()
+g.add((N_ts_id, BRICK.hasTimeseriesId, Literal("987f8342-f917-46c1-a0e7-8402e0fe8ebe")))
+g.add((BLDG.temp_sensor_N, BRICK.timeseries, N_ts_id))
+S_ts_id = BNode()
+g.add((S_ts_id, BRICK.hasTimeseriesId, Literal("00f92284-53d8-44b5-8dc2-ea0cae6c4776")))
+g.add((BLDG.temp_sensor_S, BRICK.timeseries, S_ts_id))
+E_ts_id = BNode()
+g.add((E_ts_id, BRICK.hasTimeseriesId, Literal("cc97ea6b-f879-4be5-a375-ac6bc128a0c0")))
+g.add((BLDG.temp_sensor_E, BRICK.timeseries, E_ts_id))
+W_ts_id = BNode()
+g.add((W_ts_id, BRICK.hasTimeseriesId, Literal("679bb09c-0f15-4392-bf0b-9201c966c5c5")))
+g.add((BLDG.temp_sensor_W, BRICK.timeseries, W_ts_id))
 
 g.serialize("brick-bot-omg-pro2.ttl", format="ttl")
