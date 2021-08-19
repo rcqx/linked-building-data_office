@@ -17,11 +17,6 @@ bldg:ZONE_E a bot:Zone ;
         bldg:thermostatE ;
     bot:hasSpace bldg:office_E .
 
-bldg:ZONE_N a bot:Zone ;
-    bot:hasElement bldg:RHSensor_N,
-        bldg:thermostatN ;
-    bot:hasSpace bldg:office_N .
-
 bldg:ZONE_S a bot:Zone ;
     bot:hasElement bldg:RHSensor_S,
         bldg:thermostatS ;
@@ -53,6 +48,10 @@ bldg:RHSensor_S a bot:Element,
 bldg:RHSensor_W a bot:Element,
         bpo1:Product,
         product:Product .
+
+bldg:ZONE_N a bot:Zone ;
+    bot:hasElement bldg:RHSensor_N,
+        bldg:thermostatN .
 
 bldg:office a bot:Storey ;
     bot:hasSpace bldg:office_C,
@@ -97,6 +96,15 @@ bldg:office_C a bot:Space ;
     bot:hasElement bldg:ceiling,
         bldg:wall .
 
+bldg:office_N a bot:Space ;
+    bot:adjacentZone bldg:office_E,
+        bldg:office_W ;
+    bot:containsZone bldg:ZONE_N ;
+    bot:hasElement bldg:ceiling,
+        bldg:glassdoor,
+        bldg:wall,
+        bldg:window .
+
 bldg:window a bot:Element,
         bpo1:Product,
         product:Product .
@@ -107,14 +115,6 @@ bldg:office_E a bot:Space ;
     bot:adjacentZone bldg:office_N,
         bldg:office_S ;
     bot:hasElement bldg:ceiling,
-        bldg:wall,
-        bldg:window .
-
-bldg:office_N a bot:Space ;
-    bot:adjacentZone bldg:office_E,
-        bldg:office_W ;
-    bot:hasElement bldg:ceiling,
-        bldg:glassdoor,
         bldg:wall,
         bldg:window .
 

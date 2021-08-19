@@ -2,7 +2,7 @@ from rdflib import RDF, RDFS, OWL, Namespace, Graph
 
 g = Graph()
 
-g.parse("Brick_Office.ttl", format="ttl")
+g.parse("compiled-Brick_Office.ttl", format="ttl")
 
 # Discover classes used in model
 classes = """SELECT DISTINCT ?class WHERE {
@@ -52,4 +52,39 @@ for vav, zn, sas, set, sat in g.query(
 ):
     print(vav, zn, sas, set, sat)
 
-    
+# Select offices associated with floor
+for floor, room in g.query("""
+SELECT ?floor ?room WHERE {
+    ?floor a brick:Floor .
+    ?floor brick:hasPart ?room .
+    ?room a brick:Room .
+}
+"""):
+    print(floor,room) 
+
+for sensor in g.query("""
+SELECT ?s WHERE {
+    ?s a brick:Sensor .
+}
+"""):
+    print(sensor)
+
+# HVAC systems 
+for hvac, parts in g.query("""
+SELECT ?hvac ?p WHERE {
+    ?hvac a brick:HVAC_System .
+    ?hvac brick:hasPart ?p .
+    ?p a brick:HVAC_Equipment .
+}
+"""):
+    print(hvac, parts)
+
+# Zones served by HVAC systems 
+for nsys  in g.query("""
+SELECT ?nsys ?zn WHERE {
+    ?nsys a brick:HVAC_System .
+    ?nsys brick:feeds ?zn .
+    ?zn a brick:HVAC_zone .
+}
+"""):
+    print(nsys)

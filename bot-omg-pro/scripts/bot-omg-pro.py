@@ -173,6 +173,7 @@ g.add((BLDG.office_C, BOT.adjacentZone, BLDG.office_W))
 # GEOMETRY
 g.add((BLDG.office_building, OMG.hasGeometry, BLDG.BuildingGeometry))
 
+
 with open("bot-omg-pro.ttl", "wb") as f:
     # the Turtle format strikes a balance beteween being compact and easy to read
     f.write(g.serialize(format="ttl", encoding='UTF-8'))

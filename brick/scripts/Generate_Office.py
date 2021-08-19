@@ -81,12 +81,17 @@ g.add((BLDG.office_N_SYS, BRICK.hasPart, BRICK.Fan_Coil_Unit))
 g.add((BLDG.office_N_SYS, BRICK.hasPart, BRICK.Condenser))
 
 # System feeding North Zone
+g.add((BLDG.office_N_SYS, BRICK.feeds, BLDG.ZONE_N))
 g.add((BLDG.Fan_Coil_N, BRICK.feeds, BLDG.ZONE_N))
 g.add((BLDG.Fan_Coil_N, BRICK.hasPoint, BLDG.FCU_saf_sensor))
 g.add((BLDG.Fan_Coil_N, BRICK.hasPoint, BLDG.FCU_set_sensor))
 g.add((BLDG.Fan_Coil_N, BRICK.hasPoint, BLDG.FCU_sat_sensor))
 
 # Plant, AHU, VAVs, DPRs feeding S,E,W and C zones
+g.add((BLDG.SEWC_SYS, BRICK.feeds, BLDG.ZONE_S))
+g.add((BLDG.SEWC_SYS, BRICK.feeds, BLDG.ZONE_E))
+g.add((BLDG.SEWC_SYS, BRICK.feeds, BLDG.ZONE_W))
+g.add((BLDG.SEWC_SYS, BRICK.feeds, BLDG.ZONE_C))
 g.add((BLDG.SEWC_SYS, RDF.type, BRICK.HVAC_System))
 g.add((BLDG["AHU-01"], RDF.type, BRICK.Air_Handling_Unit))
 g.add((BLDG["Boiler"], RDF.type, BRICK.Boiler))

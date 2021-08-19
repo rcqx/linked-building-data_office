@@ -52,3 +52,15 @@ SELECT ?b ?g WHERE {
 }""")
 for row in geometry:
     print(row)
+
+# Number of elements in offices (space class)?
+qbot = g.query("""
+SELECT ?sp ?ele WHERE {
+    ?sp a bot:Space .
+    ?sp bot:hasElement ?ele .
+    ?ele a bot:Element .
+}""")
+
+for row in qbot:
+    print(row)
+
