@@ -9,25 +9,47 @@ bldg:Fan_Coil_N a brick:Fan_Coil_Unit ;
         bldg:FCU_sat_sensor,
         bldg:FCU_set_sensor .
 
-bldg:ZONE_C a brick:HVAC_zone ;
-    brick:hasPart bldg:office_C ;
-    brick:hasPoint bldg:RHSensor_C,
-        bldg:temp_sensor_C .
+bldg:SEWC_SYS a brick:HVAC_System ;
+    brick:hasPart bldg:AHU-01,
+        bldg:Air-loop,
+        bldg:Boiler,
+        bldg:Chilled-Water-loop,
+        bldg:Chiller,
+        bldg:Hot-Water-loop,
+        bldg:Tower .
 
-bldg:ZONE_E a brick:HVAC_zone ;
-    brick:hasPart bldg:office_E ;
-    brick:hasPoint bldg:RHSensor_E,
-        bldg:temp_sensor_E .
+bldg:VAV_C_DPR a brick:Damper ;
+    brick:hasPoint bldg:VAV_C_DPRPOS .
 
-bldg:ZONE_S a brick:HVAC_zone ;
-    brick:hasPart bldg:office_S ;
-    brick:hasPoint bldg:RHSensor_S,
-        bldg:temp_sensor_S .
+bldg:VAV_E_DPR a brick:Damper ;
+    brick:hasPoint bldg:VAV_E_DPRPOS .
 
-bldg:ZONE_W a brick:HVAC_zone ;
-    brick:hasPart bldg:office_W ;
-    brick:hasPoint bldg:RHSensor_W,
-        bldg:temp_sensor_W .
+bldg:VAV_W_DPR a brick:Damper ;
+    brick:hasPoint bldg:VAV_W_DPRPOS .
+
+bldg:VAV_saf_sensor_C a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAV_saf_sensor_E a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAV_saf_sensor_S a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAV_saf_sensor_W a brick:Supply_Air_Flow_Sensor .
+
+bldg:VAV_sat_sensor_C a brick:Supply_Air_Temperature_Sensor .
+
+bldg:VAV_sat_sensor_E a brick:Supply_Air_Temperature_Sensor .
+
+bldg:VAV_sat_sensor_S a brick:Supply_Air_Temperature_Sensor .
+
+bldg:VAV_sat_sensor_W a brick:Supply_Air_Temperature_Sensor .
+
+bldg:VAV_set_sensor_C a brick:Supply_Air_Flow_Setpoint .
+
+bldg:VAV_set_sensor_E a brick:Supply_Air_Flow_Setpoint .
+
+bldg:VAV_set_sensor_S a brick:Supply_Air_Flow_Setpoint .
+
+bldg:VAV_set_sensor_W a brick:Supply_Air_Flow_Setpoint .
 
 bldg:office a brick:Floor ;
     brick:hasLocation bldg:office_building ;
@@ -37,14 +59,31 @@ bldg:office a brick:Floor ;
         bldg:office_S,
         bldg:office_W .
 
-bldg:office_N_SYS brick:hasPart brick:Condenser,
+bldg:office_N_SYS a brick:HVAC_System ;
+    brick:hasPart brick:Condenser,
         brick:Fan_Coil_Unit .
+
+bldg:AHU-01 a brick:Air_Handling_Unit ;
+    brick:feeds bldg:VAV-C,
+        bldg:VAV-E,
+        bldg:VAV-S,
+        bldg:VAV-W .
+
+bldg:Air-loop a brick:Air_Loop .
+
+bldg:Boiler a brick:Boiler .
+
+bldg:Chilled-Water-loop a brick:Chilled_Water_Loop .
+
+bldg:Chiller a brick:Chiller .
 
 bldg:FCU_saf_sensor a brick:Supply_Air_Flow_Sensor .
 
 bldg:FCU_sat_sensor a brick:Supply_Air_Temperature_Sensor .
 
 bldg:FCU_set_sensor a brick:Supply_Air_Flow_Setpoint .
+
+bldg:Hot-Water-loop a brick:Hot_Water_Loop .
 
 bldg:RHSensor_C a brick:Zone_Air_Humidity_Sensor .
 
@@ -58,10 +97,56 @@ bldg:RHSensor_W a brick:Zone_Air_Humidity_Sensor .
 
 bldg:Site a brick:Site .
 
+bldg:Tower a brick:Cooling_Tower .
+
+bldg:VAV-C a brick:Variable_Air_Volume_Box_With_Reheat ;
+    brick:feeds bldg:ZONE_C ;
+    brick:hasPart bldg:ZONE_C ;
+    brick:hasPoint brick:VAV_saf_sensor_C,
+        brick:VAV_sat_sensor_C,
+        brick:VAV_set_sensor_C .
+
+bldg:VAV-E a brick:Variable_Air_Volume_Box_With_Reheat ;
+    brick:feeds bldg:ZONE_E ;
+    brick:hasPart bldg:ZONE_E ;
+    brick:hasPoint brick:VAV_saf_sensor_E,
+        brick:VAV_sat_sensor_E,
+        brick:VAV_set_sensor_E .
+
+bldg:VAV-S a brick:Variable_Air_Volume_Box_With_Reheat ;
+    brick:feeds bldg:ZONE_S ;
+    brick:hasPart bldg:VAV_S_DPR ;
+    brick:hasPoint brick:VAV_saf_sensor_S,
+        brick:VAV_sat_sensor_S,
+        brick:VAV_set_sensor_S .
+
+bldg:VAV-W a brick:Variable_Air_Volume_Box_With_Reheat ;
+    brick:feeds bldg:ZONE_W ;
+    brick:hasPart bldg:ZONE_W ;
+    brick:hasPoint brick:VAV_saf_sensor_W,
+        brick:VAV_sat_sensor_W,
+        brick:VAV_set_sensor_W .
+
+bldg:VAV_C_DPRPOS a brick:Damper_Position_Setpoint .
+
+bldg:VAV_E_DPRPOS a brick:Damper_Position_Setpoint .
+
+bldg:VAV_S_DPR a brick:Damper ;
+    brick:hasPoint bldg:VAV_S_DPRPOS .
+
+bldg:VAV_S_DPRPOS a brick:Damper_Position_Setpoint .
+
+bldg:VAV_W_DPRPOS a brick:Damper_Position_Setpoint .
+
 bldg:ZONE_N a brick:HVAC_zone ;
     brick:hasPart bldg:office_N ;
     brick:hasPoint bldg:RHSensor_N,
         bldg:temp_sensor_N .
+
+bldg:ZONE_S a brick:HVAC_zone ;
+    brick:hasPart bldg:office_S ;
+    brick:hasPoint bldg:RHSensor_S,
+        bldg:temp_sensor_S .
 
 bldg:office_building a brick:Building ;
     brick:hasLocation bldg:Site .
@@ -75,6 +160,21 @@ bldg:temp_sensor_N a brick:Temperature_Sensor .
 bldg:temp_sensor_S a brick:Temperature_Sensor .
 
 bldg:temp_sensor_W a brick:Temperature_Sensor .
+
+bldg:ZONE_C a brick:HVAC_zone ;
+    brick:hasPart bldg:office_C ;
+    brick:hasPoint bldg:RHSensor_C,
+        bldg:temp_sensor_C .
+
+bldg:ZONE_E a brick:HVAC_zone ;
+    brick:hasPart bldg:office_E ;
+    brick:hasPoint bldg:RHSensor_E,
+        bldg:temp_sensor_E .
+
+bldg:ZONE_W a brick:HVAC_zone ;
+    brick:hasPart bldg:office_W ;
+    brick:hasPoint bldg:RHSensor_W,
+        bldg:temp_sensor_W .
 
 bldg:office_C a brick:Room .
 
