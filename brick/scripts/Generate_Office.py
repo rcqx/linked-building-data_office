@@ -175,6 +175,5 @@ g.add((BLDG["VAV-C"], BRICK.hasPoint, BRICK.VAV_set_sensor_C))
 g.add((BLDG["VAV-C"], BRICK.hasPoint, BRICK.VAV_sat_sensor_C))
 
 with open("Brick_Office.ttl", "wb") as f:
-    # the Turtle format strikes a balance beteween being compact and easy to read
     f.write(g.serialize(format="ttl", encoding='UTF-8'))
 
