@@ -25,6 +25,6 @@ descriptions to their corresponding things (e.g. building objects).
 
 Examples describe the "Tutorial Exercise 2" from the ["Getting with EnergyPlus"guide](https://energyplus.net/sites/default/files/pdfs_v8.3.0/GettingStarted.pdf)  
 
-<img src="https://www.energyplus.net/sites/default/files/docs/site_v8.3.0/GettingStarted/media/image020.png"/>
+![office](./static/5_zone_office.png)
 
 
